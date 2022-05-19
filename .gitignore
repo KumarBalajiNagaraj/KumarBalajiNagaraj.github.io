@@ -3,7 +3,7 @@
 .DS_Store
 *.iws
 /out/
-.node_modules/
+
 atlassian-ide-plugin.xml
 com_crashlytics_export_strings.xml
 crashlytics.properties
@@ -35,4 +35,4 @@ typings/
 .env
 .sass-cache/
 *.css.map
-/node_modules
+
