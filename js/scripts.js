@@ -1,48 +1,48 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
     /***************** Waypoints ******************/
 
-    $('.wp1').waypoint(function () {
+    $('.wp1').waypoint(function() {
         $('.wp1').addClass('animated fadeInLeft');
     }, {
         offset: '75%'
     });
-    $('.wp2').waypoint(function () {
+    $('.wp2').waypoint(function() {
         $('.wp2').addClass('animated fadeInRight');
     }, {
         offset: '75%'
     });
-    $('.wp3').waypoint(function () {
+    $('.wp3').waypoint(function() {
         $('.wp3').addClass('animated fadeInLeft');
     }, {
         offset: '75%'
     });
-    $('.wp4').waypoint(function () {
+    $('.wp4').waypoint(function() {
         $('.wp4').addClass('animated fadeInRight');
     }, {
         offset: '75%'
     });
-    $('.wp5').waypoint(function () {
+    $('.wp5').waypoint(function() {
         $('.wp5').addClass('animated fadeInLeft');
     }, {
         offset: '75%'
     });
-    $('.wp6').waypoint(function () {
+    $('.wp6').waypoint(function() {
         $('.wp6').addClass('animated fadeInRight');
     }, {
         offset: '75%'
     });
-    $('.wp7').waypoint(function () {
+    $('.wp7').waypoint(function() {
         $('.wp7').addClass('animated fadeInUp');
     }, {
         offset: '75%'
     });
-    $('.wp8').waypoint(function () {
+    $('.wp8').waypoint(function() {
         $('.wp8').addClass('animated fadeInLeft');
     }, {
         offset: '75%'
     });
-    $('.wp9').waypoint(function () {
+    $('.wp9').waypoint(function() {
         $('.wp9').addClass('animated fadeInRight');
     }, {
         offset: '75%'
@@ -71,13 +71,13 @@ $(document).ready(function () {
     /***************** Nav Transformicon ******************/
 
     /* When user clicks the Icon */
-    $('.nav-toggle').click(function () {
+    $('.nav-toggle').click(function() {
         $(this).toggleClass('active');
         $('.header-nav').toggleClass('open');
         event.preventDefault();
     });
     /* When user clicks a link */
-    $('.header-nav li a').click(function () {
+    $('.header-nav li a').click(function() {
         $('.nav-toggle').toggleClass('active');
         $('.header-nav').toggleClass('open');
 
@@ -85,8 +85,8 @@ $(document).ready(function () {
 
     /***************** Header BG Scroll ******************/
 
-    $(function () {
-        $(window).scroll(function () {
+    $(function() {
+        $(window).scroll(function() {
             var scroll = $(window).scrollTop();
 
             if (scroll >= 20) {
@@ -118,9 +118,9 @@ $(document).ready(function () {
     });
     /***************** Smooth Scrolling ******************/
 
-    $(function () {
+    $(function() {
 
-        $('a[href*=#]:not([href=#])').click(function () {
+        $('a[href*=#]:not([href=#])').click(function() {
             if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
 
                 var target = $(this.hash);
@@ -166,11 +166,11 @@ $(document).ready(function () {
 
 
     /********************** Toggle Map Content **********************/
-    $('#btn-show-map').click(function () {
+    $('#btn-show-map').click(function() {
         $('#map-content').toggleClass('toggle-map-content');
         $('#btn-show-content').toggleClass('toggle-map-content');
     });
-    $('#btn-show-content').click(function () {
+    $('#btn-show-content').click(function() {
         $('#map-content').toggleClass('toggle-map-content');
         $('#btn-show-content').toggleClass('toggle-map-content');
     });
@@ -184,23 +184,23 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "Ram and Antara's Wedding",
+            title: "NaWinSudha",
 
             // Event start date
-            start: new Date('Nov 27, 2017 10:00'),
+            start: new Date('June 9, 2022 07:30'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Nov 29, 2017 00:00'),
+            end: new Date('June 9, 2022 12:00'),
 
             // Event Address
-            address: 'ITC Fortune Park Hotel, Kolkata',
+            address: 'Sri Radhakrishna hall, Mathampallayam',
 
             // Event Description
-            description: "We can't wait to see you on our big day. For any queries or issues, please contact Mr. Amit Roy at +91 9876543210."
+            description: "We can't wait to see you on our big day. For any queries or issues, please contact Mr. Naveen Prashanth"
         }
     });
 
@@ -208,18 +208,18 @@ $(document).ready(function () {
 
 
     /********************** RSVP **********************/
-    $('#rsvp-form').on('submit', function (e) {
+    $('#rsvp-form').on('submit', function(e) {
         e.preventDefault();
         var data = $(this).serialize();
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
+        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40' &&
+            MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         } else {
             $.post('https://script.google.com/macros/s/AKfycbzUqz44wOat0DiGjRV1gUnRf4HRqlRARWggjvHKWvqniP7eVDG-/exec', data)
-                .done(function (data) {
+                .done(function(data) {
                     console.log(data);
                     if (data.result === "error") {
                         $('#alert-wrapper').html(alert_markup('danger', data.message));
@@ -228,7 +228,7 @@ $(document).ready(function () {
                         $('#rsvp-modal').modal('show');
                     }
                 })
-                .fail(function (data) {
+                .fail(function(data) {
                     console.log(data);
                     $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
                 });
@@ -241,7 +241,7 @@ $(document).ready(function () {
 
 // Google map
 function initMap() {
-    var location = {lat: 22.5932759, lng: 88.27027720000001};
+    var location = { lat: 11.069346, lng: 76.941841 };
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: location,
@@ -255,7 +255,7 @@ function initMap() {
 }
 
 function initBBSRMap() {
-    var la_fiesta = {lat: 20.305826, lng: 85.85480189999998};
+    var la_fiesta = { lat: 11.069346, lng: 76.9418418 };
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: la_fiesta,
@@ -274,7 +274,7 @@ function alert_markup(alert_type, msg) {
 }
 
 // MD5 Encoding
-var MD5 = function (string) {
+var MD5 = function(string) {
 
     function RotateLeft(lValue, iShiftBits) {
         return (lValue << iShiftBits) | (lValue >>> (32 - iShiftBits));
@@ -361,7 +361,9 @@ var MD5 = function (string) {
     };
 
     function WordToHex(lValue) {
-        var WordToHexValue = "", WordToHexValue_temp = "", lByte, lCount;
+        var WordToHexValue = "",
+            WordToHexValue_temp = "",
+            lByte, lCount;
         for (lCount = 0; lCount <= 3; lCount++) {
             lByte = (lValue >>> (lCount * 8)) & 255;
             WordToHexValue_temp = "0" + lByte.toString(16);
@@ -380,12 +382,10 @@ var MD5 = function (string) {
 
             if (c < 128) {
                 utftext += String.fromCharCode(c);
-            }
-            else if ((c > 127) && (c < 2048)) {
+            } else if ((c > 127) && (c < 2048)) {
                 utftext += String.fromCharCode((c >> 6) | 192);
                 utftext += String.fromCharCode((c & 63) | 128);
-            }
-            else {
+            } else {
                 utftext += String.fromCharCode((c >> 12) | 224);
                 utftext += String.fromCharCode(((c >> 6) & 63) | 128);
                 utftext += String.fromCharCode((c & 63) | 128);
@@ -398,10 +398,22 @@ var MD5 = function (string) {
 
     var x = Array();
     var k, AA, BB, CC, DD, a, b, c, d;
-    var S11 = 7, S12 = 12, S13 = 17, S14 = 22;
-    var S21 = 5, S22 = 9, S23 = 14, S24 = 20;
-    var S31 = 4, S32 = 11, S33 = 16, S34 = 23;
-    var S41 = 6, S42 = 10, S43 = 15, S44 = 21;
+    var S11 = 7,
+        S12 = 12,
+        S13 = 17,
+        S14 = 22;
+    var S21 = 5,
+        S22 = 9,
+        S23 = 14,
+        S24 = 20;
+    var S31 = 4,
+        S32 = 11,
+        S33 = 16,
+        S34 = 23;
+    var S41 = 6,
+        S42 = 10,
+        S43 = 15,
+        S44 = 21;
 
     string = Utf8Encode(string);
 
