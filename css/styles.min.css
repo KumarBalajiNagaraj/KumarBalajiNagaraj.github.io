@@ -173,7 +173,7 @@ section .header {
 }
 
 .section-border {
-    border-bottom: 1px solid #E6E9EA
+    border-bottom: 0px solid #E6E9EA
 }
 
 .tooltip {
